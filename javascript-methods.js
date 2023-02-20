@@ -103,6 +103,13 @@ Array.prototype.myLastIndexOf = function (searchElement) {
 // KEYS //
 Object.myKeys = function (object) {
   // Place your code here.
+   let res = []
+   for (let key in object){
+    if (object.hasOwnProperty(key)){
+     res.push(key);
+    }
+   }
+   return res;
 };
 
 // VALUES //
