@@ -24,8 +24,8 @@ Array.prototype.myFilter = function (callbackFn) {
   // Place your code here.
   const res = [];
   for (let i = 0; i < this.length; i++) {
-    if (callbackFn(this[i], i, this)) {
-      res.push(callbackFn(this[i]));
+    if (callbackFn(this[i])) {
+      res.push(this[i]);
     }
   }
   return res;
@@ -38,11 +38,11 @@ Array.prototype.mySome = function (callbackFn) {
     if (callbackFn(this[i], i, this)) {
       return true;
     }
-    return false;
   }
+  return false;
 };
 
-// EVERY //
+// EVERY // The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
 Array.prototype.myEvery = function (callbackFn) {
   // Place your code here.
   for (let i = 0; i < this.length; i++) {
@@ -103,23 +103,61 @@ Array.prototype.myLastIndexOf = function (searchElement) {
 // KEYS //
 Object.myKeys = function (object) {
   // Place your code here.
-   let res = []
-   for (let key in object){
-    if (object.hasOwnProperty(key)){
-     res.push(key);
-    }
-   }
-   return res;
+  let res = [];
+  for (let key in object) {
+    res.push(key);
+  }
+  return res;
 };
 
 // VALUES //
 Object.myValues = function (object) {
   // Place your code here.
-  let res = []
-  for (let key in object){
-   if (object.hasOwnProperty(key)){
+  let res = [];
+  for (let key in object) {
     res.push(object[key]);
-   }
   }
   return res;
 };
+
+// TESTING //
+//let arr = [1, 2, 3, 4, 5];
+
+// console.log(arr.myMap((x) => x * 2));
+
+//console.log(arr.myFilter((x) => x % 2 == 0));
+
+// console.log(arr.mySome((x) => x % 2 == 0));
+
+// console.log(arr.myEvery((x) => x > 10));
+
+/*
+const initialValue = 0;
+const sumWithInitial = arr.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+
+*/
+
+//console.log(arr.myIncludes(5));
+//console.log(arr.myIncludes(10));
+
+//console.log(arr.myIndexOf(5));
+//console.log(arr.myIndexOf(10));
+
+//let arr1 = [1, 2, 3, 4, 5, 7, 6, 8, 6, 5, 3];
+//console.log(arr1.myLastIndexOf(3));
+
+/*
+const object1 = {
+  a: "somestring",
+  b: 42,
+  c: false,
+};
+
+*/
+//console.log(Object.myKeys(object1));
+//console.log(Object.myValues(object1));
