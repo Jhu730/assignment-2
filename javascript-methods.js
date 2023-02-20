@@ -115,4 +115,11 @@ Object.myKeys = function (object) {
 // VALUES //
 Object.myValues = function (object) {
   // Place your code here.
+  let res = []
+  for (let key in object){
+   if (object.hasOwnProperty(key)){
+    res.push(object[key]);
+   }
+  }
+  return res;
 };
