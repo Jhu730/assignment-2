@@ -121,16 +121,16 @@ Object.myValues = function (object) {
 };
 
 // TESTING //
-let arr = [1, 2, 3, 4, 5];
+//let arr = [1, 2, 3, 4, 5];
 
 // console.log(arr.myMap((x) => x * 2));
 
 //console.log(arr.myFilter((x) => x % 2 == 0));
 
-// console.log(arr.mySome((x) => x % 2 == 0));
+// console.log(arr.ySome((x) => x % 2 == 0));
 
 // console.log(arr.myEvery((x) => x > 10));
-
+/*
 const initialValue = 0;
 const sumWithInitial = arr.myReduce(
   (accumulator, currentValue) => accumulator + currentValue,
