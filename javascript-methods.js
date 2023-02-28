@@ -54,17 +54,17 @@ Array.prototype.myEvery = function (callbackFn) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function (callbackFn) {
+Array.prototype.myReduce = function (callbackFn, initalValue) {
   // Place your code here.
   let res = initalValue;
   for (let i = 0; i < this.length; i++) {
-    if (res !== undefined) {
-      res = callbackFn(res, this[i], i, this);
-    } else {
-      res = this[i];
+    if (res === undefined) {
+      res = this[0];
+      i = 0;
     }
-    return res;
+    res = callbackFn(res, this[i], i, this);
   }
+  return res;
 };
 
 // INCLUDES //
@@ -121,7 +121,7 @@ Object.myValues = function (object) {
 };
 
 // TESTING //
-//let arr = [1, 2, 3, 4, 5];
+let arr = [1, 2, 3, 4, 5];
 
 // console.log(arr.myMap((x) => x * 2));
 
@@ -131,16 +131,12 @@ Object.myValues = function (object) {
 
 // console.log(arr.myEvery((x) => x > 10));
 
-/*
 const initialValue = 0;
-const sumWithInitial = arr.reduce(
+const sumWithInitial = arr.myReduce(
   (accumulator, currentValue) => accumulator + currentValue,
   initialValue
 );
-
 console.log(sumWithInitial);
-
-*/
 
 //console.log(arr.myIncludes(5));
 //console.log(arr.myIncludes(10));
